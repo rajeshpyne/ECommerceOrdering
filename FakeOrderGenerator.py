@@ -39,6 +39,6 @@ if __name__=='__main__':
 	status=1
 	while(status==1):
 		example_dummy_data = pandas.DataFrame([orderGeneration() for _ in range(num)])
-		example_dummy_data.to_csv("/home/NOODLEAI/rajesh.pyne/foodDelivery/FakeOrderGeneration.csv",mode='a',index=False,header=None)
-		subprocess.call("tail -n "+str(num)+" /home/NOODLEAI/rajesh.pyne/foodDelivery/FakeOrderGeneration.csv | /opt/kafka_2.11-0.11.0.2/bin/kafka-console-producer.sh --broker-list localhost:9092 --topic order_generated",shell=True)
+		example_dummy_data.to_csv("/home/rajesh.pyne/foodDelivery/FakeOrderGeneration.csv",mode='a',index=False,header=None)
+		subprocess.call("tail -n "+str(num)+" /home/rajesh.pyne/foodDelivery/FakeOrderGeneration.csv | /opt/kafka_2.11-0.11.0.2/bin/kafka-console-producer.sh --broker-list localhost:9092 --topic order_generated",shell=True)
 		#time.sleep(1)
